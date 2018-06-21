@@ -7,6 +7,7 @@
 ##如何使用
 * 克隆当前项目到本地目录
 * 导入IDE，如IntelliJ IDEA
+* 修改MainContrller.java中的appId、appKey和appSecret
 * 创建新的Run/Debug Configuration
 * 执行Run或Debug
 * 在浏览器中访问：http://localhost:8080/demo
