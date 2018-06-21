@@ -26,8 +26,8 @@ import java.text.SimpleDateFormat;
 @RequestMapping(value = "/")
 public class MainContrller {
     private Boolean isInited = false;
-    private Integer appId = 3009;
-    private String appKey = "3g8FOx82Fs8vgNboYYck", appSecret = "Bck3bOeR5rSJ";
+    private Integer appId = -1;
+    private String appKey = "APPKEY", appSecret = "APPSECRET";
 
     private UserRequest userRequest = new UserRequest();
     private ProductRequest productRequest = new ProductRequest();
