@@ -55,9 +55,11 @@
     <div class="page__ft">
         <div class="weui-footer weui-footer_fixed-bottom">
             <p class="weui-footer__links">
-                <a href="https://api.hh-medic.com/project/47/interface/api/1568" class="weui-footer__link">HH-API</a>
+                <a href="https://api.hh-medic.com/project/47/interface/api/1568" target="_blank"
+                   class="weui-footer__link">HH-API</a>
             </p>
-            <p class="weui-footer__text">Copyright © 2015-2018 hh-medic.com</p>
+            <p class="weui-footer__text"
+               th:text="'Copyright © 2015-'+${#dates.format(new java.util.Date().getTime(), 'yyyy')}+' hh-medic.com'"></p>
         </div>
     </div>
 </div>

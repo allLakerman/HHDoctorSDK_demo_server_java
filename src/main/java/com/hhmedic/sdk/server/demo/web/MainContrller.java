@@ -90,6 +90,29 @@ public class MainContrller {
         return JSON.toJSONString(serverResponse);
     }
 
+    @RequestMapping(value = "/addMember")
+    public String addMember() {
+        return "addMember";
+    }
+
+    @PostMapping(value = "/addMember")
+    @ResponseBody
+    public String addMemberApi(@RequestParam(name = "uuid", required = true, defaultValue = "") Long uuid,
+                               @RequestParam(name = "name", required = true, defaultValue = "") String name,
+                               @RequestParam(name = "photoUrl", required = true, defaultValue = "") String photoUrl,
+                               @RequestParam(name = "sex", required = true, defaultValue = "") String sex,
+                               @RequestParam(name = "birthday", required = true, defaultValue = "") String birthday) throws Exception {
+        DateFormat fmt = new SimpleDateFormat("yyyy-MM-dd");
+        User user = new User();
+        user.setPid(uuid);
+        user.setName(name);
+        user.setBirthday(fmt.parse(birthday));
+        user.setSex("男".equals(sex) ? User.SexEnum.男 : User.SexEnum.女);
+        user.setPhotourl(photoUrl);
+        ServerResponse serverResponse = userRequest.addMember(user, false, "'");
+        return JSON.toJSONString(serverResponse);
+    }
+
     /**
      * 添加产品套餐页面
      *
