@@ -57,7 +57,7 @@
         <dependency>
             <groupId>com.hhmedic.sdk</groupId>
             <artifactId>server.family</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </dependency>
 
 

@@ -26,7 +26,7 @@ import java.text.SimpleDateFormat;
 @RequestMapping(value = "/")
 public class MainContrller {
     private Boolean isInited = false;
-    private Integer appId = -1;
+    private Integer sdkProductId = -1;
     private String appKey = "APPKEY", appSecret = "APPSECRET";
 
     private UserRequest userRequest = new UserRequest();
@@ -113,6 +113,18 @@ public class MainContrller {
         return JSON.toJSONString(serverResponse);
     }
 
+    @RequestMapping(value = "/getUserWxAcode")
+    public String getUserWxAcode() {
+        return "getUserWxAcode";
+    }
+
+    @PostMapping(value = "/getUserWxAcode")
+    @ResponseBody
+    public String getUserWxAcodeApi(@RequestParam(name = "uuid", required = true, defaultValue = "") Long uuid) throws Exception {
+        ServerResponse serverResponse = userRequest.getUserWxAcode(uuid);
+        return JSON.toJSONString(serverResponse);
+    }
+
     /**
      * 添加产品套餐页面
      *
@@ -189,7 +201,7 @@ public class MainContrller {
         if (isInited) {
             return;
         }
-        SdkProfile.initialize(appId, appKey, appSecret, SdkProfile.ProfileTypeEnum.TEST);
+        SdkProfile.initialize(sdkProductId, appKey, appSecret, SdkProfile.ProfileTypeEnum.TEST);
         isInited = true;
     }
 
