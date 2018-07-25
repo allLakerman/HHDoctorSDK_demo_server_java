@@ -147,6 +147,7 @@
             params.push($(inputs[i]).attr('id') + '=' + encodeURIComponent($(inputs[i]).val()));
         }
         params.push('sex=' + encodeURIComponent($('#sex').val()));
+        params.push('relation=' + encodeURIComponent($('#relation').val()));
 
         $.post('./addMember', params.join('&'), function (res, succ) {
             if ('success' == succ) {

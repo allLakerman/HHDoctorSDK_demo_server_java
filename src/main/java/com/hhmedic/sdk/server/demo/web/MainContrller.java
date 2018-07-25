@@ -101,7 +101,8 @@ public class MainContrller {
                                @RequestParam(name = "name", required = true, defaultValue = "") String name,
                                @RequestParam(name = "photoUrl", required = true, defaultValue = "") String photoUrl,
                                @RequestParam(name = "sex", required = true, defaultValue = "") String sex,
-                               @RequestParam(name = "birthday", required = true, defaultValue = "") String birthday) throws Exception {
+                               @RequestParam(name = "birthday", required = true, defaultValue = "") String birthday,
+                               @RequestParam(name = "relation", required = true, defaultValue = "") String relation) throws Exception {
         DateFormat fmt = new SimpleDateFormat("yyyy-MM-dd");
         User user = new User();
         user.setPid(uuid);
@@ -109,6 +110,7 @@ public class MainContrller {
         user.setBirthday(fmt.parse(birthday));
         user.setSex("男".equals(sex) ? User.SexEnum.男 : User.SexEnum.女);
         user.setPhotourl(photoUrl);
+        user.setRelation(relation);
         ServerResponse serverResponse = userRequest.addMember(user, false, "'");
         return JSON.toJSONString(serverResponse);
     }
@@ -145,9 +147,19 @@ public class MainContrller {
      */
     @PostMapping(value = "/addProduct")
     @ResponseBody
-    public String addProductÅpi(@RequestParam(name = "phoneNum", required = true, defaultValue = "") String phoneNum,
+    public String addProductÅpi(@RequestParam(name = "phoneNum", defaultValue = "") String phoneNum,
+                                @RequestParam(name = "imei", defaultValue = "") String imei,
                                 @RequestParam(name = "pid", required = true, defaultValue = "") Integer pid) throws Exception {
-        ServerResponse serverResponse = productRequest.addProduct(phoneNum, pid);
+        ServerResponse serverResponse;
+        if (!StringUtil.isNullOrEmpty(phoneNum)) {
+            serverResponse = productRequest.addProduct(phoneNum, pid);
+        } else if (!StringUtil.isNullOrEmpty(imei)) {
+            serverResponse = productRequest.addProductByImei(imei, pid);
+        } else {
+            serverResponse = new ServerResponse();
+            serverResponse.setStatus(400);
+            serverResponse.setMessage("phoneNum和imei至少应保证一个有值");
+        }
         return JSON.toJSONString(serverResponse);
     }
 
