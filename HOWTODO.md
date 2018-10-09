@@ -29,7 +29,7 @@ https://api.hh-medic.com/project/44/interface/api/1349
 https://api.hh-medic.com/project/47/interface/api/1367
 #### 添加套餐
 https://api.hh-medic.com/project/47/interface/api/1568
-#### 获取小程序码
+#### 获取小程序码（小程序对接专用）
 https://api.hh-medic.com/project/47/interface/api/1624
 
 ***
