@@ -11,3 +11,6 @@
 * 创建新的Run/Debug Configuration
 * 执行Run或Debug
 * 在浏览器中访问：http://localhost:8080/demo
+
+## 完整对接流程
+请参考：https://github.com/HHMedic/HHDoctorSDK_demo_server_java/blob/master/HOWTODO.md
