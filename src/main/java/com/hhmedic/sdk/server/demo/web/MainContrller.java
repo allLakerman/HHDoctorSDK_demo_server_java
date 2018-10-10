@@ -27,7 +27,7 @@ import java.text.SimpleDateFormat;
 public class MainContrller {
     private Boolean isInited = false;
     private Integer sdkProductId = -1;
-    private String appKey = "APPKEY", appSecret = "APPSECRET";
+    private String  appSecret = "APPSECRET";
 
     private UserRequest userRequest = new UserRequest();
     private ProductRequest productRequest = new ProductRequest();
@@ -213,7 +213,7 @@ public class MainContrller {
         if (isInited) {
             return;
         }
-        SdkProfile.initialize(sdkProductId, appKey, appSecret, SdkProfile.ProfileTypeEnum.TEST);
+        SdkProfile.initialize(sdkProductId,  appSecret, SdkProfile.ProfileTypeEnum.TEST);
         isInited = true;
     }
 
