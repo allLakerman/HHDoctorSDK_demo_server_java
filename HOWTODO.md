@@ -9,7 +9,7 @@
 
 #### 2.小程序对接
 * H5页面显示二维码，提示用户长按识别二维码，即可调用小程序，图文咨询医助，视频咨询医生。可参考下方示意图：
-![sample](https://imgs.hh-medic.com/icon/wmp/sample.jpg)
+![sample](https://imgs.hh-medic.com/icon/wmp/sample.jpg?x-oss-process=image/resize,m_fixed,w_300)
 ***
 
 ## 二、API地址
