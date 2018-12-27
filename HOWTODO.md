@@ -50,10 +50,15 @@ https://github.com/HHMedic/HHDoctorSDK_demo_server_dotnet
 
 ***
 
-## 六、开发帐号
+## 六、APP调用小程序
+请参考：https://api.hh-medic.com/project/53/interface/api/1528
+
+***
+
+## 七、开发帐号
 和缓分配，请向您的和缓接口人索取。
 
 ***
 
-## 七、其他说明
+## 八、其他说明
 如需数据抄送功能，可参考API：https://api.hh-medic.com/project/47/interface/api/1592
